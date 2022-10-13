@@ -1,1 +1,22 @@
-<p>company-list works!</p>
+<div>
+    <section class="add-filter-container me-5">
+        <div class="add-client-container d-flex justify-content-between">
+            <span><strong>Clients</strong></span><span class="bi bi-plus-circle"></span>
+        </div>
+        <input type="text" placeholder="Search">
+    </section>
+    <section class="list-container">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let data of companyData">
+                <div class=" w-100 d-flex justify-content-between">
+                    <span>1D</span>
+                    <span>{{data.companyName}}</span>
+                    <div class="ps-5">
+                        <span class="bi bi-x-circle"></span>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </section>
+</div>

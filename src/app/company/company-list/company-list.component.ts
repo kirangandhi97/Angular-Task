@@ -11,9 +11,9 @@ export class CompanyListComponent implements OnInit {
 
   ngOnInit(): void {
   }
- companyData=[
-  {
-    
-  }
+ companyData = [
+  {companyName:"1Rivet", companyDescription:"jhlshlhilkhglhglhg",companyTags:"python",companyLogo:"jdvbkdvbd"},
+  {companyName:"2Divet", companyDescription:"jhlshlhilkhglhglhg",companyTags:"python",companyLogo:"jdvbkdvbd"},
+  {companyName:"3Givet", companyDescription:"jhlshlhilkhglhglhg",companyTags:"python",companyLogo:"jdvbkdvbd"},
  ]
 }
