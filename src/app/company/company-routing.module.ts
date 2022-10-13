@@ -9,6 +9,11 @@ const routes: Routes = [
      component: CompanyComponent,
      children:[
       {
+        path:'',
+        pathMatch:'full',
+        redirectTo:'add'
+      },
+      {
         path:'add',
         component:CompanyFormComponent
       },
