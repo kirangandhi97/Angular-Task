@@ -1,1 +1,37 @@
-<p>company-form works!</p>
+<!-- Company Registration form  -->
+<div class="form-container p-3">
+    <form [formGroup]="companyForm" class="border p-4">
+        <div class="my-3">
+            <input id="first-name" type="text" class="form-control" placeholder="Company Name"
+                formControlName="companyName">
+            <span class="text-danger"
+                *ngIf="companyForm.controls['companyName'].invalid && (isSubmitted || companyForm.controls['companyName'].dirty || companyForm.controls['companyName'].touched)">This
+                field is required</span>
+        </div>
+        <div class="my-3">
+            <textarea id="first-name" type="text" class="form-control" placeholder="Company Description"
+                formControlName="companyDescription"></textarea>
+            <span class="text-danger"
+                *ngIf="companyForm.controls['companyDescription'].invalid && (isSubmitted || companyForm.controls['companyDescription'].dirty || companyForm.controls['companyDescription'].touched)">This
+                field is required</span>
+        </div>
+        <div class="my-3">
+            <ng-select [items]="tags" bindLabel="name" placeholder="Select Tags" appendTo="body" [multiple]="true"
+                formControlName="companyTags">
+            </ng-select>
+            <span class="text-danger"
+                    *ngIf="companyForm.controls['companyTags'].invalid && (isSubmitted || companyForm.controls['companyTags'].dirty || companyForm.controls['companyTags'].touched)">This
+                    field required atleast one Tag</span>
+        </div>
+        <div class="my-3">
+            <input id="first-name" type="text" class="form-control" placeholder="Select Logo"
+                formControlName="companyLogo">
+            <span class="text-danger"
+                *ngIf="companyForm.controls['companyLogo'].invalid && (isSubmitted || companyForm.controls['companyLogo'].dirty || companyForm.controls['companyLogo'].touched)">This
+                field is required</span>
+        </div>
+        <button type="reset" class="btn btn-dark me-3">Cancel</button>
+        <button type="submit" class="btn btn-success" (click)="onSave()">Save</button>
+
+    </form>
+</div>
