@@ -7,10 +7,10 @@
     </section>
     <section class="list-container">
         <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between" *ngFor="let data of companyData">
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let companies of listCompanyData">
                 <div class=" w-100 d-flex justify-content-between">
                     <span>1D</span>
-                    <span>{{data.companyName}}</span>
+                    <span>{{companies.companyName}}</span>
                     <div class="ps-5">
                         <span class="bi bi-x-circle"></span>
                     </div>

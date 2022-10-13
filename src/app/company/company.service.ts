@@ -1,9 +1,18 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Company } from './company.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CompanyService {
+public companyUrl:string;
+  constructor(private httpclient:HttpClient) { 
+    this.companyUrl = 'http://localhost:3000/company'
+  }
 
-  constructor() { }
+  // retrieve all data from server 
+  getAllData():Observable<Company[]>{
+    return this.httpclient.get<Company[]>(this.companyUrl);
+  }
+
 }

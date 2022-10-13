@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Company } from '../company.model';
+import { CompanyService } from '../company.service';
 
 @Component({
   selector: 'app-company-list',
@@ -6,14 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-list.component.scss']
 })
 export class CompanyListComponent implements OnInit {
-
-  constructor() { }
+public listCompanyData:Company[];
+  constructor(private companyService:CompanyService) { 
+    this.listCompanyData = [];
+  }
 
   ngOnInit(): void {
+    this.getAllCompanyData();
   }
- companyData = [
-  {companyName:"1Rivet", companyDescription:"jhlshlhilkhglhglhg",companyTags:"python",companyLogo:"jdvbkdvbd"},
-  {companyName:"2Divet", companyDescription:"jhlshlhilkhglhglhg",companyTags:"python",companyLogo:"jdvbkdvbd"},
-  {companyName:"3Givet", companyDescription:"jhlshlhilkhglhglhg",companyTags:"python",companyLogo:"jdvbkdvbd"},
- ]
+//   dummy data for test
+//  companyData = [
+//   {companyName:"1Rivet", companyDescription:"jhlshlhilkhglhglhg",companyTags:"python",companyLogo:"jdvbkdvbd"},
+//   {companyName:"2Divet", companyDescription:"jhlshlhilkhglhglhg",companyTags:"python",companyLogo:"jdvbkdvbd"},
+//   {companyName:"3Givet", companyDescription:"jhlshlhilkhglhglhg",companyTags:"python",companyLogo:"jdvbkdvbd"},
+//  ]
+
+getAllCompanyData(){
+  this.companyService.getAllData().subscribe((companyData)=>
+  {
+    this.listCompanyData = companyData;
+    console.log(this.listCompanyData);
+    
+  })
+}
+
 }
