@@ -8,13 +8,6 @@
       "id": 1
     },
     {
-      "companyName": "Top-Stars",
-      "companyDescription": "khadhvaikvh",
-      "companyTags": "python",
-      "companyLogo": "dhhffhhdhdjsskks",
-      "id": 2
-    },
-    {
       "companyName": "Hitachis",
       "companyDescription": "khadhvaikvh",
       "companyTags": "python",
@@ -31,28 +24,6 @@
       ],
       "companyLogo": "advsdbdsfngngf",
       "id": 4
-    },
-    {
-      "companyName": "Life'sGood",
-      "companyDescription": "asvzfdjfxgADSsryjhsed",
-      "companyTags": [
-        {
-          "name": "qa"
-        }
-      ],
-      "companyLogo": "fbnzfngxmgmfhmhfbm",
-      "id": 5
-    },
-    {
-      "companyName": "1Rivera",
-      "companyDescription": "vdffdhhmdbdfmghm,hmhmgmg",
-      "companyTags": [
-        {
-          "name": "python"
-        }
-      ],
-      "companyLogo": "sfhbdfdgfgfh",
-      "id": 6
     }
   ]
 }

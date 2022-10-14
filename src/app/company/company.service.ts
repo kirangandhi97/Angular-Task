@@ -25,7 +25,12 @@ export class CompanyService {
 
   // for adding new data 
   postNewData(company: Company): Observable<Company> {
-    return this.httpclient.post<Company>(this.companyUrl, company)
+    return this.httpclient.post<Company>(this.companyUrl, company);
+  }
+
+  // delete company data 
+  deleteCompanyData(id:number):Observable<Company>{
+    return this.httpclient.delete<Company>(this.companyUrl+id);
   }
 
 }
