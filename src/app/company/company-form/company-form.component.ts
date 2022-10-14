@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Company } from '../company.model';
 import { CompanyService } from '../company.service';
 
@@ -14,7 +14,7 @@ public tags:any;
 public isSubmitted:boolean=false;
 public companyForm:FormGroup;
 public id!:any;
-  constructor(private fb:FormBuilder, private companyService:CompanyService, private activatedroute:ActivatedRoute) {
+  constructor(private fb:FormBuilder, private companyService:CompanyService, private activatedroute:ActivatedRoute, private router:Router) {
     // get params from activated route 
     this.activatedroute.params.subscribe((params)=>{
       this.id = params['id'];
@@ -38,11 +38,13 @@ public id!:any;
 
   ngOnInit(): void {
     // this.getCompanyDatabyId();
+  
+  
+  
   }
 
   onSave(){
     this.isSubmitted=true;
-    // console.log(this.companyForm);
     if(this.companyForm.valid){
       if(this.id){
         this.getUpdateData();
@@ -51,6 +53,8 @@ public id!:any;
         this.postData();
       }
     }
+    this.router.navigate(['company/add'])
+  
     
   }
 
