@@ -7,6 +7,8 @@ import { CompanyFormComponent } from './company-form/company-form.component';
 import { CompanyListComponent } from './company-list/company-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { HttpClientModule } from '@angular/common/http';
+import { CompanyService } from './company.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,11 @@ import { NgSelectModule } from '@ng-select/ng-select';
     CommonModule,
     CompanyRoutingModule,
     ReactiveFormsModule,
-    NgSelectModule
+    NgSelectModule,
+    HttpClientModule
+  ],
+  providers:[
+    CompanyService
   ]
 })
 export class CompanyModule { }

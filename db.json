@@ -3,7 +3,23 @@
         {
             "companyName": "TRY-US",
             "companyDescription": "khadhvaikvh",
+            "companyTags":"python",
+            "companyLogo":"dhhffhhdhdjsskks",
             "id":1
+        },
+        {
+            "companyName": "Top-Star",
+            "companyDescription": "khadhvaikvh",
+            "companyTags":"python",
+            "companyLogo":"dhhffhhdhdjsskks",
+            "id":2
+        },
+        {
+            "companyName": "Hitachi",
+            "companyDescription": "khadhvaikvh",
+            "companyTags":"python",
+            "companyLogo":"dhhffhhdhdjsskks",
+            "id":3
         }
     ]
 }
