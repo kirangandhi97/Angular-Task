@@ -20,8 +20,8 @@
                 formControlName="companyTags">
             </ng-select>
             <span class="text-danger"
-                    *ngIf="companyForm.controls['companyTags'].invalid && (isSubmitted || companyForm.controls['companyTags'].dirty || companyForm.controls['companyTags'].touched)">This
-                    field required atleast one Tag</span>
+                *ngIf="companyForm.controls['companyTags'].invalid && (isSubmitted || companyForm.controls['companyTags'].dirty || companyForm.controls['companyTags'].touched)">This
+                field required atleast one Tag</span>
         </div>
         <div class="my-3">
             <input id="first-name" type="text" class="form-control" placeholder="Select Logo"
@@ -30,8 +30,10 @@
                 *ngIf="companyForm.controls['companyLogo'].invalid && (isSubmitted || companyForm.controls['companyLogo'].dirty || companyForm.controls['companyLogo'].touched)">This
                 field is required</span>
         </div>
-        <button type="reset" class="btn btn-dark me-3">Cancel</button>
-        <button type="submit" class="btn btn-success" (click)="onSave()">Save</button>
+        <div class="text-end">
+            <button type="reset" class="btn btn-dark me-3">Cancel</button>
+            <button type="submit" class="btn btn-success" (click)="onSave()">Save</button>
+        </div>
 
     </form>
 </div>
