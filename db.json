@@ -20,6 +20,39 @@
       "companyTags": "python",
       "companyLogo": "dhhffhhdhdjsskks",
       "id": 3
+    },
+    {
+      "companyName": "Whirlpool",
+      "companyDescription": "dvdffddryktulyulyuj,mg",
+      "companyTags": [
+        {
+          "name": "python"
+        }
+      ],
+      "companyLogo": "advsdbdsfngngf",
+      "id": 4
+    },
+    {
+      "companyName": "Life'sGood",
+      "companyDescription": "asvzfdjfxgADSsryjhsed",
+      "companyTags": [
+        {
+          "name": "qa"
+        }
+      ],
+      "companyLogo": "fbnzfngxmgmfhmhfbm",
+      "id": 5
+    },
+    {
+      "companyName": "1Rivera",
+      "companyDescription": "vdffdhhmdbdfmghm,hmhmgmg",
+      "companyTags": [
+        {
+          "name": "python"
+        }
+      ],
+      "companyLogo": "sfhbdfdgfgfh",
+      "id": 6
     }
   ]
 }
