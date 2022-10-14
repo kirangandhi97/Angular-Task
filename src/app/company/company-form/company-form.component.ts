@@ -13,7 +13,7 @@ export class CompanyFormComponent implements OnInit {
 public tags:any;
 public isSubmitted:boolean=false;
 public companyForm:FormGroup;
-public id:any;
+public id!:any;
   constructor(private fb:FormBuilder, private companyService:CompanyService, private activatedroute:ActivatedRoute) {
     // get params from activated route 
     this.activatedroute.params.subscribe((params)=>{
@@ -48,10 +48,17 @@ public id:any;
         this.getUpdateData();
       }
       else{
-        
+        this.postData();
       }
     }
     
+  }
+
+  postData(){
+    this.companyService.postNewData(this.companyForm.value).subscribe((company:Company)=>{
+      console.log(company);
+      
+    })
   }
 
   getAllCompanyData(){
@@ -60,7 +67,7 @@ public id:any;
   }
 
   getCompanyDatabyId(){
-    this.companyService.getDataById(this.id).subscribe((company:Company)=>{
+    this.companyService.getDataById(Number(this.id)).subscribe((company:Company)=>{
       this.companyForm.patchValue(company);
       // console.log(company);  
     })
@@ -68,9 +75,7 @@ public id:any;
 
   getUpdateData(){
     this.companyService.updateData( this.id, this.companyForm.value).subscribe((company:Company)=>{
-      console.log(company);
-      this.getAllCompanyData();
-      
     })
+    this.getAllCompanyData();
   }
 }
