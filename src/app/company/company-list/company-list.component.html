@@ -2,22 +2,22 @@
   <section class="add-filter-container border">
     <div class="add-client-container d-flex justify-content-between">
       <span><strong>Clients</strong></span
-      ><span class="bi bi-plus-circle"></span>
+      ><button class="bi bi-plus-circle border-0 bg-transparent" (click)="onAdd()"></button>
     </div>
-    <input type="text" placeholder="Search" />
+    <input type="text" placeholder="Search" [(ngModel)]="searchTerm"/>
   </section>
   <section class="list-container border">
     <ul class="list-group">
       <li
         class="list-group-item d-flex justify-content-between"
-        *ngFor="let companies of listCompanyData">
+        *ngFor="let companies of listCompanyData | searchCompany:searchTerm">
         <div class="w-100 d-flex justify-content-between">
           <div class="d-flex justify-content-between w-100" (click)="onEdit(companies.id)"> <!--here routerlink is just for understanding-->
-            <span>1D</span>
-            <span class="pe-5">{{ companies.companyName }}</span>
+            <span>{{ companies.companyName | nameLogo}}</span>
+            <span class="pe-5">{{ companies.companyName | titlecase}}</span>
           </div>
           <div class="ps-5">
-            <span class="bi bi-x-circle" (click)="onDelete(companies.id)"></span>
+            <button class="logo-icon bi bi-x-circle border-0 bg-transparent" (click)="onDelete(companies.id)"></button>
           </div>
         </div>
       </li>
