@@ -39,10 +39,12 @@ this.router.navigate(['company/edit', id])
 }
 
 onDelete(id:number){
-this.companyService.deleteCompanyData(id).subscribe(()=>{
-  this.getAllCompanyData();
-})
-} 
+  if(confirm("Are you sure you want to delete this Data??")){
+    this.companyService.deleteCompanyData(id).subscribe(()=>{
+      this.getAllCompanyData();
+    })
+  }
+ }
 onAdd(){
   this.router.navigate(['company/add'])
 }
