@@ -10,6 +10,7 @@ import { CompanyService } from '../company.service';
 })
 export class CompanyListComponent implements OnInit {
 public listCompanyData:Company[];
+public searchTerm:string="";
   constructor(private companyService:CompanyService, private router:Router) { 
     this.listCompanyData = [];
   }
@@ -41,7 +42,9 @@ onDelete(id:number){
 this.companyService.deleteCompanyData(id).subscribe(()=>{
   this.getAllCompanyData();
 })
-
+} 
+onAdd(){
+  this.router.navigate(['company/add'])
 }
 
 }
