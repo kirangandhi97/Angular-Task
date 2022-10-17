@@ -6,7 +6,7 @@ import { Company } from 'src/app/company/company.model';
   providedIn: 'root'
 })
 export class DataSharingService {
-  public dataSharing = new Subject<Company>();
+  public dataSharing = new Subject<Company>;
   constructor() { 
     
   }
@@ -17,10 +17,10 @@ export class DataSharingService {
     
   }
 
-  getData(){
-    this.dataSharing.asObservable();
-    // console.log(company);
+  // getData(){
+  //   this.dataSharing.asObservable();
+  //   // console.log(company);
     
-  }
+  // }
 
 }

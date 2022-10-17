@@ -12,22 +12,23 @@ import { CompanyService } from '../company.service';
 export class CompanyListComponent implements OnInit {
   public listCompanyData: Company[];
   public searchTerm: string = '';
-  public data:any;
+  public data: any;
   constructor(
     private companyService: CompanyService,
     private router: Router,
     private datasharingService: DataSharingService
   ) {
-    
+
     this.listCompanyData = [];
   }
 
   ngOnInit(): void {
-  // this.data = this.datasharingService.getData().subscribe((data:any)=>{
-  //   if(data){
-  //     this.getAllCompanyData();
-  //   }
-  //       })
+    this.datasharingService.dataSharing.subscribe((data: Company) => {
+      if (data) {
+        this.getAllCompanyData();
+      }
+    })
+    this.getAllCompanyData();
   }
   //   dummy data for test
   //  companyData = [

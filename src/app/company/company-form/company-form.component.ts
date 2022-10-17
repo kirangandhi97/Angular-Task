@@ -52,6 +52,7 @@ export class CompanyFormComponent implements OnInit {
         this.postData();
       }
     }
+    this.companyForm.reset();
   }
 
   postData() {
