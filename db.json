@@ -24,6 +24,94 @@
       ],
       "companyLogo": "vemjvekv",
       "id": 4
+    },
+    {
+      "companyName": "kiran gandhi",
+      "companyDescription": "bcbabcvjkavkabvavla",
+      "companyTags": [
+        {
+          "name": "frontend"
+        }
+      ],
+      "companyLogo": "sjcbkasbckasbca",
+      "id": 5
+    },
+    {
+      "companyName": "yesha gandhi",
+      "companyDescription": "jdbvkdbvkvdvd",
+      "companyTags": [
+        {
+          "name": "python"
+        }
+      ],
+      "companyLogo": "dcvjnndsvdkv",
+      "id": 6
+    },
+    {
+      "companyName": "Hiren Gohil",
+      "companyDescription": "dbckjascavasdv",
+      "companyTags": [
+        {
+          "name": "frontend"
+        }
+      ],
+      "companyLogo": "jkbkasbadv",
+      "id": 7
+    },
+    {
+      "companyName": "disha gohil",
+      "companyDescription": "m ajbkcsacsjdcjkdsllwllww",
+      "companyTags": [
+        {
+          "name": "qa"
+        }
+      ],
+      "companyLogo": "kdkwbwwlmwkd",
+      "id": 8
+    },
+    {
+      "companyName": "Monali Bhalerao",
+      "companyDescription": "kncewucewbcjewv",
+      "companyTags": [
+        {
+          "name": "python"
+        }
+      ],
+      "companyLogo": "qkcnibcloesv",
+      "id": 9
+    },
+    {
+      "companyName": "Harshit Desai",
+      "companyDescription": "nwkbcckwcwc",
+      "companyTags": [
+        {
+          "name": "python"
+        }
+      ],
+      "companyLogo": "cwkncbkwcwc",
+      "id": 10
+    },
+    {
+      "companyName": "Harshit Desai",
+      "companyDescription": "nwkbcckwcwc",
+      "companyTags": [
+        {
+          "name": "python"
+        }
+      ],
+      "companyLogo": "cwkncbkwcwc",
+      "id": 11
+    },
+    {
+      "companyName": "Harshit Desai",
+      "companyDescription": "nwkbcckwcwc",
+      "companyTags": [
+        {
+          "name": "python"
+        }
+      ],
+      "companyLogo": "cwkncbkwcwc",
+      "id": 12
     }
   ]
 }
