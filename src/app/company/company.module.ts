@@ -10,6 +10,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { HttpClientModule } from '@angular/common/http';
 import { CompanyService } from './company.service';
 import { SharedModule } from '../shared/shared.module';
+import { BreadcrumbModule } from 'xng-breadcrumb';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SharedModule } from '../shared/shared.module';
     NgSelectModule,
     HttpClientModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    BreadcrumbModule
   
     
   ],

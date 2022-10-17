@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataSharingService } from 'src/app/shared/services/data-sharing.service';
+import { BreadcrumbService } from 'xng-breadcrumb';
 import { Company } from '../company.model';
 import { CompanyService } from '../company.service';
 
@@ -15,12 +16,15 @@ export class CompanyFormComponent implements OnInit {
   public isSubmitted: boolean = false;
   public companyForm: FormGroup;
   public id!: any;
+  // public companyName!:string;
+  public action!:string;
   constructor(
     private fb: FormBuilder,
     private companyService: CompanyService,
     private activatedroute: ActivatedRoute,
     private router: Router,
-    private datasharingService:DataSharingService
+    private datasharingService:DataSharingService,
+    private breadcrumbService:BreadcrumbService
   ) {
     // get params from activated route
     this.activatedroute.params.subscribe((params) => {
@@ -41,6 +45,14 @@ export class CompanyFormComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getCompanyDatabyId();
+    if(this.id){
+      this.breadcrumbService.set('@Edit', 'edit');
+      this.action = 'Edit'
+    }
+    else{
+      this.breadcrumbService.set('@Add', 'add');
+      this.action = 'Add'
+    }
   }
 
   onSave() {
@@ -74,8 +86,8 @@ export class CompanyFormComponent implements OnInit {
       .getDataById(Number(this.id))
       .subscribe((company: Company) => {
         this.companyForm.patchValue(company);
-        
         // console.log(company);
+        // this.companyName = company.companyName;
       });
   }
 

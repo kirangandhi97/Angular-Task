@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AlphabetOnlyDirective } from './directives/alphabet-only.directive';
 import { NameLogoPipe } from './Pipes/NameLogoPipe/name-logo.pipe';
 import { SearchCompanyPipe } from './Pipes/searchCompanyPipe/search-company.pipe';
+import { BreadCrumbsComponent } from './breadCrumb/bread-crumbs/bread-crumbs.component';
 
 
 
@@ -10,14 +11,16 @@ import { SearchCompanyPipe } from './Pipes/searchCompanyPipe/search-company.pipe
   declarations: [
     AlphabetOnlyDirective,
     NameLogoPipe,
-    SearchCompanyPipe
+    SearchCompanyPipe,
+    BreadCrumbsComponent
   ],
   imports: [
     CommonModule
   ],
   exports:[
     NameLogoPipe,
-    SearchCompanyPipe
+    SearchCompanyPipe,
+    BreadCrumbsComponent
   ]
 })
 export class SharedModule { }
