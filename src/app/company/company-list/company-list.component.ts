@@ -13,6 +13,7 @@ export class CompanyListComponent implements OnInit {
   public listCompanyData: Company[];
   public searchTerm: string = '';
   public data: any;
+  public Error:string='No Records Found'
   constructor(
     private companyService: CompanyService,
     private router: Router,
@@ -29,6 +30,7 @@ export class CompanyListComponent implements OnInit {
       }
     })
     this.getAllCompanyData();
+    
   }
   //   dummy data for test
   //  companyData = [
@@ -58,5 +60,11 @@ export class CompanyListComponent implements OnInit {
   }
   onAdd() {
     this.router.navigate(['company/add']);
+  }
+
+onSearch(data:Company[]){
+    if(this.listCompanyData.length===0){
+      console.log('no data');   
+    };
   }
 }

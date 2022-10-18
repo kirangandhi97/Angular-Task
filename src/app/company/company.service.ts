@@ -10,15 +10,31 @@ export class CompanyService {
     this.companyUrl = 'http://localhost:3000/company/'
   }
 
-  // retrieve all data from server 
+ 
+
+  /**
+   * 
+   * @returns company[]
+   */ 
   getAllData(): Observable<Company[]> {
     return this.httpclient.get<Company[]>(this.companyUrl);
   }
-  //  for edit and getting new updated data 
+  
+  /**
+   * 
+   * @param id 
+   * @returns  Company
+   */
   getDataById(id: number): Observable<Company> {
     return this.httpclient.get<Company>(this.companyUrl + id)
   }
 
+  /**
+   * update edited data
+   * @param id 
+   * @param company 
+   * @returns company
+   */
   updateData(id: number, company: Company): Observable<Company> {
     return this.httpclient.put<Company>(this.companyUrl + id, company);
   }

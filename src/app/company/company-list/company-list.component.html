@@ -9,10 +9,10 @@
     <input class="search-bar w-100" type="text" placeholder="Search here..." [(ngModel)]="searchTerm"/>
   </section>
   <section class="list-container mt-4">
-    <ul class="list-group">
+    <ul class="list-group" *ngIf="listCompanyData | searchCompany:searchTerm as filteredData" >
       <li
         class="list-group-item d-flex justify-content-between"
-        *ngFor="let companies of listCompanyData | searchCompany:searchTerm">
+        *ngFor="let companies of filteredData">
         <div class="w-100 d-flex justify-content-between ">
           <div class="d-flex  w-100" (click)="onEdit(companies.id)"> <!--here routerlink is just for understanding-->
             <span>{{ companies.companyName | nameLogo}}</span>
@@ -23,6 +23,7 @@
           </div>
         </div>
       </li>
+      <div *ngIf="filteredData.length === 0" class="text-danger text-center">No Record Found</div>
     </ul>
   </section>
 </div>

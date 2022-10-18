@@ -86,8 +86,6 @@ export class CompanyFormComponent implements OnInit {
       .getDataById(Number(this.id))
       .subscribe((company: Company) => {
         this.companyForm.patchValue(company);
-        // console.log(company);
-        // this.companyName = company.companyName;
       });
   }
 
