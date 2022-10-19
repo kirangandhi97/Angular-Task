@@ -17,20 +17,24 @@ export class CompanyFormComponent implements OnInit {
   public companyForm: FormGroup;
   public id!: any;
   // public companyName!:string;
-  public action!:string;
+  public action!: string;
   constructor(
     private fb: FormBuilder,
     private companyService: CompanyService,
     private activatedroute: ActivatedRoute,
     private router: Router,
-    private datasharingService:DataSharingService,
-    private breadcrumbService:BreadcrumbService
+    private datasharingService: DataSharingService,
+    private breadcrumbService: BreadcrumbService
   ) {
     // get params from activated route
-    this.activatedroute.params.subscribe((params) => {
-      this.id = params['id'];
-      this.getCompanyDatabyId();
-    });
+    // this.activatedroute.params.subscribe((params) => {
+    //   this.id = params['id'];
+
+    //   // this.getCompanyDatabyId();
+
+    // });
+    console.log(this.activatedroute);
+
 
     this.tags = [{ name: 'frontend' }, { name: 'python' }, { name: 'qa' }];
 
@@ -44,15 +48,21 @@ export class CompanyFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     // this.getCompanyDatabyId();
-    if(this.id){
+    if (this.id) {
       this.breadcrumbService.set('@Edit', 'edit');
       this.action = 'Edit'
     }
-    else{
+    else {
       this.breadcrumbService.set('@Add', 'add');
       this.action = 'Add'
     }
+
+    this.activatedroute.data.subscribe((company) => {
+      this.companyForm.patchValue(company['companyData']);
+      this.id = company['companyData']?.id
+    })
   }
 
   onSave() {
@@ -78,16 +88,16 @@ export class CompanyFormComponent implements OnInit {
   }
 
   getAllCompanyData() {
-    this.companyService.getAllData().subscribe((companyData) => {});
+    this.companyService.getAllData().subscribe((companyData) => { });
   }
 
-  getCompanyDatabyId() {
-    this.companyService
-      .getDataById(Number(this.id))
-      .subscribe((company: Company) => {
-        this.companyForm.patchValue(company);
-      });
-  }
+  // getCompanyDatabyId() {
+  //   this.companyService
+  //     .getDataById(Number(this.id))
+  //     .subscribe((company: Company) => {
+  //       this.companyForm.patchValue(company);
+  //     });
+  // }
 
   getUpdateData() {
     this.companyService

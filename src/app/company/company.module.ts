@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CompanyService } from './company.service';
 import { SharedModule } from '../shared/shared.module';
 import { BreadcrumbModule } from 'xng-breadcrumb';
+import { GetDatabyIdResolver } from './get-databy-id.resolver';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
     
   ],
   providers:[
-    CompanyService
+    CompanyService,
+    GetDatabyIdResolver
   ]
 })
 export class CompanyModule { }
