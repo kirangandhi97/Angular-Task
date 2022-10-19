@@ -20,9 +20,12 @@ export class SearchCompanyPipe implements PipeTransform {
     if (searchTerm.length === 0) {
       return value
     }
-
+    searchTerm = searchTerm.toLowerCase()
     return value.filter((company) => {
-      return company.companyName.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
+      // return company.companyName.toLowerCase().includes(searchTerm);
+      // return company.companyName.toLowerCase().indexOf(searchTerm) >-1
+      const d = (company.companyName.toLowerCase().indexOf(searchTerm) >-1 || company.companyDescription.toLowerCase().indexOf(searchTerm) >-1)
+      return d;
     });
 
 
