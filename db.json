@@ -3,14 +3,25 @@
     {
       "companyName": "Dua Lipa",
       "companyDescription": "khadhvaikvh",
-      "companyTags": [],
+      "companyTags": [
+        {
+          "name": "python"
+        },
+        {
+          "name": "qa"
+        }
+      ],
       "companyLogo": "dhhffhhdhdjsskks",
       "id": 1
     },
     {
       "companyName": "Hitachis brotherss",
       "companyDescription": "khadhvaikvh",
-      "companyTags": [],
+      "companyTags": [
+        {
+          "name": "qa"
+        }
+      ],
       "companyLogo": "dhhffhhdhdjsskks",
       "id": 3
     },

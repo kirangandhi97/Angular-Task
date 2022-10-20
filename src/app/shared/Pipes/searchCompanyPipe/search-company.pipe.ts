@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { map } from 'rxjs';
 import { Company } from 'src/app/company/company.model';
 
 @Pipe({
@@ -21,10 +22,15 @@ export class SearchCompanyPipe implements PipeTransform {
       return value
     }
     searchTerm = searchTerm.toLowerCase()
+
+  
+    
     return value.filter((company) => {
+      const d = JSON.stringify(company).toLowerCase().includes(searchTerm);
       // return company.companyName.toLowerCase().includes(searchTerm);
       // return company.companyName.toLowerCase().indexOf(searchTerm) >-1
-      const d = (company.companyName.toLowerCase().indexOf(searchTerm) >-1 || company.companyDescription.toLowerCase().indexOf(searchTerm) >-1)
+      // const d = (
+      //   company.companyName.toLowerCase().indexOf(searchTerm) >-1 || company.companyDescription.toLowerCase().indexOf(searchTerm) >-1 )
       return d;
     });
 

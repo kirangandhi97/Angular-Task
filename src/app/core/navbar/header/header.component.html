@@ -1,12 +1,21 @@
 <nav class=" header-bar bg-primary w-100 border">
     <div class="container-fluid ">
-        <div class="d-flex align-items-center">
-            <div>
-                <span class="logo-bar bi bi-list me-3"></span>
+        <div class="d-flex flex-column">
+            <div class="d-flex">
+                <span class="logo-bar bi bi-list me-3 text-white"></span>
+                <h3 class="text-white m-0">Clients</h3>
             </div>
-            <div>
-                <span class="text-white ">Clients</span>
-                <xng-breadcrumb class="text-white"></xng-breadcrumb>
+            <div aria-label="breadcrumb">
+                
+                <ol class="breadcrumb">
+                    <li ><span class="text-white me-1">Company /</span></li>
+                    <!-- <li class="breadcrumb-item active" aria-current="page"><a class="text-white"> {{company_name}}</a>
+                    </li> -->
+                    <li class="breadcrumb-item active text-white" aria-current="page" *ngIf="company_name; else add"> Edit / {{company_name}}</li>
+                    <ng-template #add>
+                        <span class="text-white"> Add</span>
+                    </ng-template>
+                </ol>
             </div>
         </div>
     </div>

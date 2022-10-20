@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, observable, Subject } from 'rxjs';
 import { Company } from 'src/app/company/company.model';
 
 @Injectable({
@@ -7,6 +7,8 @@ import { Company } from 'src/app/company/company.model';
 })
 export class DataSharingService {
   public dataSharing = new Subject<Company>;
+  public breadCrumbs =new Subject<string>;
+  // public breadCrumbs$ =new Observable<string>;
   constructor() { 
     
   }
@@ -22,5 +24,6 @@ export class DataSharingService {
   //   // console.log(company);
     
   // }
+
 
 }

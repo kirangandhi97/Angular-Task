@@ -16,6 +16,7 @@ export class CompanyFormComponent implements OnInit {
   public isSubmitted: boolean = false;
   public companyForm: FormGroup;
   public id!: any;
+  public company_Name!:string;
   // public companyName!:string;
   public action!: string;
   constructor(
@@ -50,18 +51,11 @@ export class CompanyFormComponent implements OnInit {
   ngOnInit(): void {
 
     // this.getCompanyDatabyId();
-    if (this.id) {
-      this.breadcrumbService.set('@Edit', 'edit');
-      this.action = 'Edit'
-    }
-    else {
-      this.breadcrumbService.set('@Add', 'add');
-      this.action = 'Add'
-    }
-
     this.activatedroute.data.subscribe((company) => {
       this.companyForm.patchValue(company['companyData']);
-      this.id = company['companyData']?.id
+      this.id = company['companyData']?.id;
+      this.company_Name = company['companyData']?.companyName;
+      this.datasharingService.breadCrumbs.next(this.company_Name);
     })
   }
 

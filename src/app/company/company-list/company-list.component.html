@@ -12,20 +12,20 @@
   </section>
   <section class="list-container mt-4">
     <ul class="list-group" *ngIf="listCompanyData | searchCompany:searchTerm as filteredData">
-      <li class="list-group-item d-flex justify-content-between" *ngFor="let companies of filteredData">
-        <div class="w-100 d-flex justify-content-between ">
-          <div class="d-flex  w-100" (click)="onEdit(companies.id)">
+      <li class="list-group-item" *ngFor="let companies of filteredData">
+        <div class="w-100 d-flex justify-content-between">
+          <div class="d-flex w-100" (click)="onEdit(companies.id)">
             <!--here routerlink is just for understanding-->
             <span>{{ companies.companyName | nameLogo}}</span>
-            <span class="pe-5 ms-4 text-nowrap">{{ companies.companyName | titlecase}}</span>
+            <span class="text-nowrap ms-5">{{ companies.companyName | titlecase}}</span>
             <!-- <span *ngFor="let tag of companies?.companyTags">
               <span> {{tag.name}}</span>
             </span> -->
-          </div>
-          <div class="">
-            <button class="logo-icon bi bi-x-circle border-0 bg-transparent ms-2 text-nowrap"
-              (click)="onDelete(companies.id)"></button>
-          </div>
+          </div> 
+          <div class="d-flex">
+          <button class=" logo-icon bi bi-x-circle border-0 bg-transparent text-nowrap"
+          (click)="onDelete(companies.id)"></button>
+        </div>
         </div>
       </li>
       <div *ngIf="filteredData.length === 0" class="text-danger text-center">No Record Found</div>

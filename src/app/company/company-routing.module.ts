@@ -17,12 +17,12 @@ const routes: Routes = [
       {
         path: 'add',
         component: CompanyFormComponent,
-        data: { breadcrumb: { alias: 'Add' } }
+        // data: { breadcrumb: { alias: 'Add' } }
       },
       {
         path: 'edit/:id',
         component: CompanyFormComponent,
-        data: { breadcrumb: { alias: 'Edit' } },
+        // data: { breadcrumb: { alias: 'Edit' } },
         resolve: { companyData: GetDatabyIdResolver }
       }
     ]
