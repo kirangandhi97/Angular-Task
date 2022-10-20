@@ -1,25 +1,30 @@
 <div class="list-container p-3 h-100 bg-secondary">
   <section class="add-filter-container">
     <div class="add-client-container d-flex justify-content-between align-item-center">
-      <span><h3>Clients</h3></span>
+      <span>
+        <h3>Clients</h3>
+      </span>
       <div>
         <button class="logo-icon-add bi bi-plus-circle border-0 bg-transparent me-4" (click)="onAdd()"></button>
       </div>
     </div>
-    <input class="search-bar w-100" type="text" placeholder="Search here..." [(ngModel)]="searchTerm"/>
+    <input class="search-bar w-100" type="text" placeholder="Search here..." [(ngModel)]="searchTerm" />
   </section>
   <section class="list-container mt-4">
-    <ul class="list-group" *ngIf="listCompanyData | searchCompany:searchTerm as filteredData" >
-      <li
-        class="list-group-item d-flex justify-content-between"
-        *ngFor="let companies of filteredData">
+    <ul class="list-group" *ngIf="listCompanyData | searchCompany:searchTerm as filteredData">
+      <li class="list-group-item d-flex justify-content-between" *ngFor="let companies of filteredData">
         <div class="w-100 d-flex justify-content-between ">
-          <div class="d-flex  w-100" (click)="onEdit(companies.id)"> <!--here routerlink is just for understanding-->
+          <div class="d-flex  w-100" (click)="onEdit(companies.id)">
+            <!--here routerlink is just for understanding-->
             <span>{{ companies.companyName | nameLogo}}</span>
             <span class="pe-5 ms-4 text-nowrap">{{ companies.companyName | titlecase}}</span>
+            <!-- <span *ngFor="let tag of companies?.companyTags">
+              <span> {{tag.name}}</span>
+            </span> -->
           </div>
           <div class="">
-            <button class="logo-icon bi bi-x-circle border-0 bg-transparent ms-2 text-nowrap" (click)="onDelete(companies.id)"></button>
+            <button class="logo-icon bi bi-x-circle border-0 bg-transparent ms-2 text-nowrap"
+              (click)="onDelete(companies.id)"></button>
           </div>
         </div>
       </li>
@@ -27,4 +32,3 @@
     </ul>
   </section>
 </div>
-        
